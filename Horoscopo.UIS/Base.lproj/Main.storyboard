@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WdN-yG-vzL">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" estimatedRowHeight="102" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="u5O-hq-hte">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="102" id="lS0-e0-yIj" customClass="HoroscopeiewCell" customModule="Horoscopo_UIS" customModuleProvider="target">
@@ -51,6 +51,7 @@
                                             <outlet property="dastesLabel" destination="qPM-Yq-Z2Y" id="VEf-kg-1mg"/>
                                             <outlet property="iconImageView" destination="mr9-Bp-5yW" id="hjg-Mb-K55"/>
                                             <outlet property="nameLabel" destination="0v8-0Z-CqZ" id="O45-gj-P1F"/>
+                                            <segue destination="oSa-Ul-4Nw" kind="show" id="aKq-6H-n1d"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -65,13 +66,77 @@
                             <constraint firstItem="u5O-hq-hte" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="y7r-Zm-WVe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="U3M-8J-aOo"/>
                     <connections>
                         <outlet property="tableView" destination="u5O-hq-hte" id="Bj2-18-SUL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="576.33587786259545" y="7.746478873239437"/>
+        </scene>
+        <!--Horoscope-->
+        <scene sceneID="Tag-20-ybp">
+            <objects>
+                <viewController id="oSa-Ul-4Nw" customClass="DetailViewController" customModule="Horoscopo_UIS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qfj-Gk-dq3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oE4-xE-ZVS">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exp-Mo-eG1">
+                                        <rect key="frame" x="85" y="23" width="240" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fechas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j95-J6-9Sp">
+                                        <rect key="frame" x="8" y="285" width="377" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hAA-pd-wYS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oE4-xE-ZVS" firstAttribute="leading" secondItem="hAA-pd-wYS" secondAttribute="leading" id="5uF-kB-t1Y"/>
+                            <constraint firstItem="hAA-pd-wYS" firstAttribute="bottom" secondItem="oE4-xE-ZVS" secondAttribute="bottom" id="O7n-FL-qVX"/>
+                            <constraint firstItem="hAA-pd-wYS" firstAttribute="trailing" secondItem="oE4-xE-ZVS" secondAttribute="trailing" id="UFk-Qd-enB"/>
+                            <constraint firstItem="oE4-xE-ZVS" firstAttribute="top" secondItem="hAA-pd-wYS" secondAttribute="top" id="vMb-bs-bT9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Horoscope" id="cjX-xF-ojC"/>
+                    <connections>
+                        <outlet property="datesLabel" destination="j95-J6-9Sp" id="Tqm-FM-AZI"/>
+                        <outlet property="iconImageView" destination="exp-Mo-eG1" id="ZHa-OK-Ir4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfM-0a-VaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1512.2137404580153" y="7.746478873239437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rxl-lY-2pb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WdN-yG-vzL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ma7-v3-eu7">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rq6-Ee-vVc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Gf-IQ-5yX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-350.38167938931298" y="7.746478873239437"/>
         </scene>
     </scenes>
     <resources>

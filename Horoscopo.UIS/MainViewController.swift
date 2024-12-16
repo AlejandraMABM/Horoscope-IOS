@@ -33,6 +33,12 @@ class MainViewController: UIViewController, UITableViewDataSource {
         cell.render(from: horoscope)
         return cell
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailViewControllerSegue =  segue.destination as! DetailViewController
+        let indexPath = tableView.indexPathForSelectedRow!
+        let horoscope = horoscopeList[indexPath.row]
+        detailViewControllerSegue.horoscope = horoscope
+    }
 
 }
 
