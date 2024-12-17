@@ -9,8 +9,6 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource {
     
-    
-
     @IBOutlet weak var tableView: UITableView!
     
     let horoscopeList : [Horoscope] = Horoscope.getAll()
@@ -18,8 +16,6 @@ class MainViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
         
         tableView.dataSource = self
     }
@@ -33,6 +29,7 @@ class MainViewController: UIViewController, UITableViewDataSource {
         cell.render(from: horoscope)
         return cell
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailViewControllerSegue =  segue.destination as! DetailViewController
         let indexPath = tableView.indexPathForSelectedRow!

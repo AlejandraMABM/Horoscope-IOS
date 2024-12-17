@@ -11,6 +11,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var DescripcionSigno: UITextView!
     @IBOutlet weak var TabPeriodos: UISegmentedControl!
+    @IBOutlet weak var DatePicker: UIDatePicker!
     
     var horoscope:Horoscope!
     
@@ -26,10 +27,11 @@ class DetailViewController: UIViewController {
         navigationItem.title = horoscope.name
         iconImageView.image = horoscope.icon
         
-        // (1) -> Pasamos los parámetros para construir la llamada a la API  -------------------------------------
-
-
+   // (1) -> Pasamos los parámetros para construir la llamada a la API
         callGetHoroscopo(periodo:periodos[0], Signo: horoscope!.id, dias: "TODAY")
+        
+        DatePicker.maximumDate = Date()
+
     }
     
  // (2) -> Construimos la llamada a la API -------------------------------------------------------------
@@ -50,20 +52,23 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
+ // Funcionalidad de los botones como: ControlSegment de los períodos : Diario, Semanal y Mensual
     @IBAction func TabPeriodos(_ sender: UISegmentedControl) {
         let selectedIndex = sender.selectedSegmentIndex
         callGetHoroscopo(periodo:periodos[selectedIndex], Signo: horoscope!.id, dias: "TODAY")
     }
+    
+// Funcionalidad para obtener la fecha del datePicker y darle formato
+    @IBAction func DatePicker(_ sender: UIDatePicker) {
         
+        let selectedDate = sender.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let formattedDate = dateFormatter.string(from: selectedDate)
+        
+        callGetHoroscopo(periodo:periodos[0], Signo: horoscope!.id, dias: formattedDate)
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
+
