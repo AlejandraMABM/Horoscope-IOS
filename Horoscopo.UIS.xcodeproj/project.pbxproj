@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1EE2480F2D0B55D00073E3C4 /* Exceptions for "Horoscopo.UIS" folder in "Horoscopo.UIS" target */ = {
+		1EB2BBEB2D109C0800C437BF /* Exceptions for "Horoscopo.UIS" folder in "Horoscopo.UIS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -24,7 +24,7 @@
 		1EE247FF2D0B55CF0073E3C4 /* Horoscopo.UIS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1EE2480F2D0B55D00073E3C4 /* Exceptions for "Horoscopo.UIS" folder in "Horoscopo.UIS" target */,
+				1EB2BBEB2D109C0800C437BF /* Exceptions for "Horoscopo.UIS" folder in "Horoscopo.UIS" target */,
 			);
 			path = Horoscopo.UIS;
 			sourceTree = "<group>";
