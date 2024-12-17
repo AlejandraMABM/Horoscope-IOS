@@ -43,10 +43,11 @@ class DetailViewController: UIViewController {
         getHoroscope(Url: URL) { [self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let horoscopeResponse):
-                    self.DescripcionSigno.text = horoscopeResponse.data.horoscope_data
-                case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
+                   case .success(let apiResponse):
+                   // aquí manejamos los datos que necesitemos
+                     self.DescripcionSigno.text = apiResponse.data.horoscope_data
+                    
+                   case .failure(let error): print("Error: \(error.localizedDescription)")
                 }
             }
         }

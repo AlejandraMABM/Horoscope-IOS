@@ -9,7 +9,7 @@ import Foundation
 
 // (3) -> Obtenemos los datos de la API  ----------------------------------------------------------------
 
-func getHoroscope(Url: String, completion: @escaping (Result<HoroscopeResponse, Error>) -> Void) {
+func getHoroscope(Url: String, completion: @escaping (Result<ResponseAPI, Error>) -> Void) {
     
     // Verificar si la URL es válida
     guard let url = URL(string: Url) else {
@@ -44,8 +44,8 @@ func getHoroscope(Url: String, completion: @escaping (Result<HoroscopeResponse, 
 
          do {
              let decoder = JSONDecoder()
-             let horoscopeResponse = try decoder.decode(HoroscopeResponse.self, from: data)
-             completion(.success(horoscopeResponse))
+             let apiResponse = try decoder.decode(ResponseAPI.self, from: data)
+             completion(.success(apiResponse))
          } catch {
              completion(.failure(error))
          }

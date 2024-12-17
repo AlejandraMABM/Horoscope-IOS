@@ -15,11 +15,10 @@ import Foundation
 //
 
 let periodos:[String] = ["daily","weekly","monthly"]
-let  dias:[String] = ["YESTERDAY","TODAY","TOMORROW"]
 
 // Estrutura de datos manejar la respuesta de la API  --------------------------------------------
 
-    struct HoroscopeResponse: Decodable {
+    struct ResponseAPI: Decodable {
         let data: HoroscopeData
         let status: Int
         let success: Bool
